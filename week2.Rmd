@@ -1,0 +1,17 @@
+---
+title: "Week 2"
+output: html_document
+---
+
+## June 17th, 2017
+
+```{r echo=FALSE,message=FALSE}
+library(leaflet)
+df <- data.frame(lat=runif(500, min=40, max = 40.5 ),
+                  lng=runif(500, min=120, max = 120.5 )) 
+df %>%
+leaflet() %>%
+addTiles() %>%  
+addMarkers(clusterOptions = markerClusterOptions())  
+
+```
